@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coco Wine - Daraz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .card {
+            display: flex;
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-top {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #counter {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .description {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .recommended-items {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .recommended-items a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .recommended-items img {
+            margin: 10px;
+            width: 200px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .recommended-items img:hover {
+            transform: scale(1.05);
+        }
+
+        .reviews {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .ratings {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .average-rating {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #333;
+        }
+
+        .stars-container {
+            display: flex;
+        }
+
+        .stars {
+            font-size: 18px;
+            margin-right: 5px;
+            color: #333;
+        }
+
+        .star {
+            color: orange;
+        }
+
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .review:last-child {
+            border-bottom: none;
+        }
+
+        .review p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; background: #f85606; color: white;">Daraz</h1>
+
+    <div class="card">
+        <img class="card-img-top" src="../assets/blueberry.jpg" alt="Product Image">
+        <div class="card-body">
+            <div style="margin-bottom: 1px;">
+                <h2>Coco Wine</h2>
+                <h3>Price: $800</h3>
+                <h3>Quantity: <span id="counter">0</span>
+                    <button onclick="increment()">+</button>
+                    <button onclick="decrement()">-</button>
+                </h3>
+                <button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_bluedaraz pdp-button_size_xl" style="background-color: #2ea5d5;">
+                    <span class="pdp-button-text"><span class="">Buy Now</span></span></button>
+                    <button class="add-to-cart-buy-now-btn  pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl" style="background-color: #f85606;">
+                        <span class="pdp-button-text" data-spm-anchor-id="a2a0e.pdp.0.i1.7b5d5977ucA2pY">
+                    <span class="" data-spm-anchor-id="a2a0e.pdp.0.i2.7b5d5977ucA2pY">Add to Cart</span></span></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>Description</h2>
+        <p>Indulge your senses in the luscious world of Blueberry Elegance Wine, 
+            a captivating fusion of nature's bounty and winemaking finesse. Our skilled vintners have crafted a symphony of flavors by 
+            selecting the finest, ripest blueberries, transforming them into a velvety elixir that is as vibrant as it is sophisticated. With each sip, experience 
+            the burst of sweet and tangy blueberry notes that gracefully unfold, creating a sensory journey that is both refreshing and indulgent. This exquisite 
+            blueberry wine is not only a celebration of the fruit's inherent richness but also a testament to the artistry and passion behind every bottle.
+             Whether enjoyed on a warm summer evening or paired with your favorite culinary delights, Blueberry Elegance Wine offers a unique and unforgettable 
+             tasting experience. Elevate your moments with the deep, alluring hues and enchanting aromas that define this exceptional creation,
+             inviting you to savor the essence of sun-kissed blueberries in every glass. Cheers to the sophistication of nature's finest, bottled for 
+             your pleasure.</p>
+    </div>
+
+    <div class="recommended-items">
+        <h2>People who bought this also bought:</h2>
+        <a href="grape.html">
+            <img src="../assets/grape.jpg" alt="Grape Image">
+        </a> 
+        <a href="coco.html">
+            <img src="../assets/coco.jpg" alt="Coco Image">
+        </a>
+        <a href="frontend.html">
+            <img src="../assets/apple.jpg" alt="Frontend Image">
+        </a>
+    </div>
+
+    <div class="reviews">
+        <h2>Customer Reviews:</h2>
+        <div class="ratings">
+            <div class="average-rating-container">
+                <div>Average Rating</div>
+                <div class="average-rating">4.1</div>
+            </div>
+            <div class="ratings-divider"></div>
+            <div class="stars-container">
+                <div class="stars">
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+
+                </div>
+                <div class="stars">
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9734;</div>
+
+                </div>
+                <div class="stars">
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9734;</div>
+                    <div class="star">&#9734;</div>
+
+                </div>
+                <div class="stars">
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9733;</div>
+                    <div class="star">&#9734;</div>
+                    <div class="star">&#9734;</div>
+                    <div class="star">&#9734;</div>
+
+                </div>
+                <div class="stars">
+                    <div class="star">&#9733; 8</div>
+                    <div class="star">&#9734; 2</div>
+                    <div class="star">&#9734; 1</div>
+                    <div class="star">&#9734; 0</div>
+                    <div class="star">&#9734; 2</div>
+                </div>
+            </div>
+        </div>
+        <div class="review"></div>
+        <div class="review">
+            <p>Great product! The taste is amazing, and it pairs well with various dishes. Highly recommended!</p>
+        </div>
+        <div class="review">
+            <p>Excellent service and delivery. The apple wine exceeded my expectations. Will buy again!</p>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            if (count > 0) {
+                count--;
+                updateCounter();
+            }
+        }
+    </script>
+
+</body>
+</html>
